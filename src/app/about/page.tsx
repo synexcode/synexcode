@@ -1,5 +1,6 @@
 'use client';
 import OurFounders from '@/components/OurFounders';
+import OurValues from '@/components/OurValues';
 import WhyChooseUs from '@/components/WhyChooseUs';
 import { motion } from 'framer-motion';
 
@@ -18,7 +19,7 @@ export default function About() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            About SynexCode
+            About <span className="text-[#008EAA] bg-white px-2 py-1 rounded-2xl">SynexCode</span>
           </motion.h1>
           <motion.p
             className="mt-4 text-lg md:text-xl"
@@ -44,6 +45,8 @@ export default function About() {
       <WhyChooseUs />
       {/* Our Founders */}
       <OurFounders/>
+      {/* Our Values */}
+      <OurValues/>
 
     </>
   );

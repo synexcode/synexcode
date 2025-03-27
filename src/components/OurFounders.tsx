@@ -24,33 +24,33 @@ export default function OurFounders() {
         <section className="py-16 bg-gradient-to-r from-[#004E64] to-[#008EAA] rounded-3xl">
             <div className="container mx-auto px-6 md:px-12 lg:px-16">
 
-             {/* 🔥 Eye-Catching Animated Heading */}
-<motion.h2
-  className="text-3xl md:text-4xl font-bold text-white text-center mb-12 relative"
-  initial={{ opacity: 0, y: -20, scale: 0.9 }}
-  whileInView={{ opacity: 1, y: 0, scale: 1 }}
-  transition={{ duration: 0.8, ease: "easeOut" }}
-  viewport={{ once: false }} // 🔥 Animation triggers every time it's in view
-  style={{
-    textShadow: "0px 0px 15px rgba(255, 255, 255, 0.8), 0px 0px 30px rgba(255, 255, 255, 0.5)", // Glowing effect
-  }}
->
-  Meet Our Founders
+                {/* 🔥 Eye-Catching Animated Heading */}
+                <motion.h2
+                    className="text-3xl md:text-4xl font-bold text-white text-center mb-12 relative"
+                    initial={{ opacity: 0, y: -20, scale: 0.9 }}
+                    whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    viewport={{ once: false }} // 🔥 Animation triggers every time it's in view
+                    style={{
+                        textShadow: "0px 0px 15px rgba(255, 255, 255, 0.8), 0px 0px 30px rgba(255, 255, 255, 0.5)", // Glowing effect
+                    }}
+                >
+                    Meet Our Founders
 
-  <motion.div
-    className="absolute left-1/2 -bottom-2 w-32 h-[6px] -translate-x-1/2"
-    initial={{ scaleX: 0, opacity: 0, borderRadius: "50%" }}
-    whileInView={{ scaleX: 1, opacity: 1, borderRadius: "50px" }}
-    transition={{ duration: 0.6, delay: 0.3, ease: "easeInOut" }}
-    viewport={{ once: false }}
-    style={{
-      boxShadow: "0px 0px 10px rgba(255, 138, 0, 0.8), 0px 0px 20px rgba(229, 46, 113, 0.9)", // Glowing effect
-      transformOrigin: "center", // Animation starts from center
-      background: "linear-gradient(90deg, #FF8A00, #E52E71)", // Vibrant gradient
-      maskImage: "radial-gradient(circle, white 60%, transparent 100%)", // Smooth edges effect
-    }}
-  />
-</motion.h2>
+                    <motion.div
+                        className="absolute left-1/2 -bottom-2 w-32 h-[6px] -translate-x-1/2"
+                        initial={{ scaleX: 0, opacity: 0, borderRadius: "50%" }}
+                        whileInView={{ scaleX: 1, opacity: 1, borderRadius: "50px" }}
+                        transition={{ duration: 0.6, delay: 0.3, ease: "easeInOut" }}
+                        viewport={{ once: false }}
+                        style={{
+                            boxShadow: "0px 0px 10px rgba(255, 138, 0, 0.8), 0px 0px 20px rgba(229, 46, 113, 0.9)", // Glowing effect
+                            transformOrigin: "center", // Animation starts from center
+                            background: "linear-gradient(90deg, #FF8A00, #E52E71)", // Vibrant gradient
+                            maskImage: "radial-gradient(circle, white 60%, transparent 100%)", // Smooth edges effect
+                        }}
+                    />
+                </motion.h2>
 
                 {/* 🔥 Animated Founder Sections */}
                 {founders.map((founder, index) => (

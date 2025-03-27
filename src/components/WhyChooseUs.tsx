@@ -46,6 +46,7 @@ export default function WhyChooseUs() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
+          viewport={{ once: false }}
         >
           Why Choose SynexCode?
         </motion.h2>
@@ -60,7 +61,7 @@ export default function WhyChooseUs() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
             >
               <CheckCircle className="text-[#008EAA] w-20 h-20 mr-4" />
               <div className="text-left">
