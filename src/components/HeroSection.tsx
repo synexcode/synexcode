@@ -44,7 +44,7 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          Welcome to <span className="text-[#008EAA] px-2 py-1 rounded">SynexCode</span>
+          Welcome to <span className="text-[#008EAA] bg-white px-2 py-1 rounded-2xl">SynexCode</span>
         </motion.h1>
         
         <motion.p 

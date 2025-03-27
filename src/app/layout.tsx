@@ -7,6 +7,9 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Synex Code",
   description: "Innovate With Code",
+  icons: {
+    icon: "/assets/logo/favicon.svg"
+  },
 };
 
 export default function RootLayout({

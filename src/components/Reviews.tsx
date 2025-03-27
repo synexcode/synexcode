@@ -53,7 +53,7 @@ export default function Reviews() {
             {reviews.map((_, index) => (
               <button 
                 key={index} 
-                className={`w-3 h-3 rounded-full ${index === selectedReview ? 'bg-blue-600' : 'bg-gray-400'}`} 
+                className={`w-3 h-3 rounded-full ${index === selectedReview ? 'bg-[#008EAA]' : 'bg-gray-400'}`} 
                 onClick={() => setSelectedReview(index)}
               ></button>
             ))}

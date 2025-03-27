@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 
@@ -26,10 +27,16 @@ export default function Navbar() {
       <div className="container mx-auto flex items-center justify-between px-6 py-4">
         <Link href="/">
           <motion.div 
-            className="text-white text-2xl font-bold"
+          className='text-3xl text-white py-1'
             whileHover={{ scale: 1.1 }}
           >
             SynexCode
+            {/* <Image
+            width={200}
+            height={200}
+            src={'/assets/logo/SynexCode-Vertical-White.svg'}
+            alt='SynexCode'
+            /> */}
           </motion.div>
         </Link>
 
