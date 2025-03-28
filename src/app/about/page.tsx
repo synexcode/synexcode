@@ -11,13 +11,15 @@ export default function About() {
         className="relative flex items-center justify-center h-[80vh] bg-cover bg-center text-white"
         style={{ backgroundImage: "url('/assets/Slide2.jpg')" }}
       >
-        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="absolute inset-0 bg-[#008EAA] opacity-70"></div>
+        {/* <div className="absolute inset-0 bg-black/50"></div> */}
         <div className="relative z-10 text-center px-6 md:px-12">
           <motion.h1
             className="text-4xl md:text-6xl font-bold"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
+            viewport={{ once: false }}
           >
             About <span className="text-[#008EAA] bg-white px-2 py-1 rounded-2xl">SynexCode</span>
           </motion.h1>
@@ -26,6 +28,7 @@ export default function About() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
+            viewport={{ once: false }}
           >
             Innovation, Excellence, and Cutting-Edge Software Solutions
           </motion.p>
@@ -35,6 +38,7 @@ export default function About() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7 }}
+            viewport={{ once: false }}
           >
             Contact Us
           </motion.a>

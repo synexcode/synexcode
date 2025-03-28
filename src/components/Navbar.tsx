@@ -52,11 +52,11 @@ export default function Navbar() {
         </div>
 
         <Link
-  href="https://wa.me/923312144766" // Apna WhatsApp number yahan replace karein
+  href="https://wa.me/923312144766"
   target="_blank"
   rel="noopener noreferrer"
 >
-  <button className="mt-1 px-5 py-3 bg-[#25D366] text-white rounded-lg font-semibold flex items-center gap-2 hover:bg-[#1EBE5F] transition">
+  <button className="hidden md:flex mt-1 px-5 py-3 bg-[#25D366] text-white rounded-2xl font-semibold items-center gap-2 hover:bg-[#1EBE5F] transition">
     <svg
       className="w-5 h-5"
       fill="currentColor"
@@ -71,6 +71,7 @@ export default function Navbar() {
     Chat on WhatsApp
   </button>
 </Link>
+
 
         <button className="md:hidden text-white" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <X size={28} /> : <Menu size={28} />}
