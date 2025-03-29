@@ -41,15 +41,29 @@ export default function WhyChooseUs() {
   return (
     <section className="py-16 bg-gray-100">
       <div className="container mx-auto px-6 md:px-12 lg:px-16 text-center">
-        <motion.h2 
-          className="text-3xl md:text-4xl font-bold text-[#008EAA] mb-6"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: false }}
-        >
-          Why Choose SynexCode?
-        </motion.h2>
+      <motion.h2 
+  className="text-3xl md:text-4xl font-bold text-[#008EAA] mb-6 relative"
+  initial={{ opacity: 0, y: -20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6 }}
+  viewport={{ once: false }}
+>
+  Why Choose SynexCode?
+  <motion.div
+    className="absolute left-1/2 ml-12 -bottom-2 w-32 h-[6px] -translate-x-1/2"
+    initial={{ scaleX: 0, opacity: 0, borderRadius: "50%" }}
+    whileInView={{ scaleX: 1, opacity: 1, borderRadius: "50px" }}
+    transition={{ duration: 0.6, delay: 0.3, ease: "easeInOut" }}
+    viewport={{ once: false }}
+    style={{
+      boxShadow: "0px 0px 10px rgba(255, 138, 0, 0.8), 0px 0px 20px rgba(229, 46, 113, 0.9)", // Glowing effect
+      transformOrigin: "center", // Animation starts from center
+      background: "linear-gradient(90deg, #FF8A00, #E52E71)", // Vibrant gradient
+      maskImage: "radial-gradient(circle, white 60%, transparent 100%)", // Smooth edges effect
+    }}
+  />
+</motion.h2>
+
         <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-10">
           At SynexCode, we specialize in delivering cutting-edge, secure, and high-performance software solutions that help businesses thrive in the digital age.
         </p>
@@ -63,9 +77,9 @@ export default function WhyChooseUs() {
               transition={{ duration: 0.5, delay: index * 0.2 }}
               viewport={{ once: false }}
             >
-              <CheckCircle className="text-[#008EAA] w-20 h-20 mr-4" />
+              <CheckCircle className="text-[#FF8A00] w-20 h-20 mr-4" />
               <div className="text-left">
-                <h3 className="text-xl font-semibold text-gray-900">{feature.title}</h3>
+                <h3 className="text-xl font-semibold text-[#008EAA]">{feature.title}</h3>
                 <p className="text-gray-600">{feature.description}</p>
               </div>
             </motion.div>

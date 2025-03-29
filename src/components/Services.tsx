@@ -30,10 +30,26 @@ export default function Services() {
                         textShadow: "0px 0px 15px rgba(255, 255, 255, 0.8), 0px 0px 30px rgba(255, 255, 255, 0.5)", // Glowing effect
                     }}
                 >
-                   Tailored Solutions for Your Success 
+                   Tailored 
+                   <span className='mx-3'>
+                    Solutions
+                    <motion.div
+                        className="absolute left-1/3 ml-16 -bottom-2 w-32 h-[6px] -translate-x-1/2"
+                        initial={{ scaleX: 0, opacity: 0, borderRadius: "50%" }}
+                        whileInView={{ scaleX: 1, opacity: 1, borderRadius: "50px" }}
+                        transition={{ duration: 0.6, delay: 0.3, ease: "easeInOut" }}
+                        viewport={{ once: false }}
+                        style={{
+                            boxShadow: "0px 0px 10px rgba(255, 138, 0, 0.8), 0px 0px 20px rgba(229, 46, 113, 0.9)", // Glowing effect
+                            transformOrigin: "center", // Animation starts from center
+                            background: "linear-gradient(90deg, #FF8A00, #E52E71)", // Vibrant gradient
+                            maskImage: "radial-gradient(circle, white 60%, transparent 100%)", // Smooth edges effect
+                        }}
+                    />
+                    </span>for Your Success 
 
                     <motion.div
-                        className="absolute left-1/2 -bottom-2 w-32 h-[6px] -translate-x-1/2"
+                        className="absolute left-2/3 -bottom-2 w-32 h-[6px] -translate-x-1/2"
                         initial={{ scaleX: 0, opacity: 0, borderRadius: "50%" }}
                         whileInView={{ scaleX: 1, opacity: 1, borderRadius: "50px" }}
                         transition={{ duration: 0.6, delay: 0.3, ease: "easeInOut" }}
@@ -66,8 +82,22 @@ export default function Services() {
               )}
               <div className="relative z-10">
                 <div className="text-5xl text-[#008EAA] mb-4">{service.icon}</div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">{service.title}</h3>
-                <p className="text-gray-600">{service.description}</p>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">{service.title}
+                <motion.div
+                                    className="absolute left-14 w-28 h-[6px]" // Adjusted width to fit under name
+                                    initial={{ scaleX: 0, opacity: 0, borderRadius: "50%" }}
+                                    whileInView={{ scaleX: 1, opacity: 1, borderRadius: "50px" }}
+                                    transition={{ duration: 0.6, delay: 0.3, ease: "easeInOut" }}
+                                    viewport={{ once: false }}
+                                    style={{
+                                        boxShadow: "0px 0px 10px rgba(255, 138, 0, 0.8), 0px 0px 20px rgba(229, 46, 113, 0.9)", // Glowing effect
+                                        transformOrigin: "left", // Animation starts from the left
+                                        background: "linear-gradient(90deg, #FF8A00, #E52E71)", // Gradient for vibrant effect
+                                        maskImage: "radial-gradient(circle, white 60%, transparent 100%)", // Smooth edges effect
+                                    }}
+                                />
+                </h3>
+                <p className="text-gray-600 mt-4">{service.description}</p>
               </div>
             </motion.div>
           ))}

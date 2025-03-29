@@ -11,7 +11,7 @@ export default function ServicesPage() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image 
-          src="/assets/services.jpg" // Replace with your actual image path
+          src="/assets/services.jpg"
           alt="Services Background"
           layout="fill"
           objectFit="cover"

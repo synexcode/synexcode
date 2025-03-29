@@ -12,7 +12,6 @@ export default function About() {
         style={{ backgroundImage: "url('/assets/Slide2.jpg')" }}
       >
         <div className="absolute inset-0 bg-[#008EAA] opacity-70"></div>
-        {/* <div className="absolute inset-0 bg-black/50"></div> */}
         <div className="relative z-10 text-center px-6 md:px-12">
           <motion.h1
             className="text-4xl md:text-6xl font-bold"
