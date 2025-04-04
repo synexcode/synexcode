@@ -26,8 +26,8 @@ export default function HeroSection() {
       {/* Background Slideshow */}
       <div className="absolute inset-0 w-full h-full">
         {images.map((img, index) => (
-          <motion.div 
-            key={index} 
+          <motion.div
+            key={index}
             className="absolute inset-0 bg-cover bg-center w-full h-full"
             style={{ backgroundImage: `url(${img})`, opacity: index === currentImage ? 1 : 0 }}
             initial={{ opacity: 0 }}
@@ -36,18 +36,20 @@ export default function HeroSection() {
           />
         ))}
       </div>
-      
+
       <div className="container px-6 md:px-12 lg:px-16 relative z-10">
-        <motion.h1 
-          className="text-4xl md:text-6xl font-bold mb-6"
+        <motion.h1
+          className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 sm:mt-20 mt-40"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
           Welcome to <span className="text-[#008EAA] bg-white px-2 py-1 rounded-2xl">SynexCode</span>
         </motion.h1>
-        
-        <motion.p 
+
+
+
+        <motion.p
           className="text-lg md:text-xl mb-8"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -55,8 +57,8 @@ export default function HeroSection() {
         >
           Innovate with Code – Web, Mobile, and AI Solutions
         </motion.p>
-        
-        <motion.div 
+
+        <motion.div
           className="flex flex-col md:flex-row gap-4 justify-center"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}

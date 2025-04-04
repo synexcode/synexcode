@@ -4,10 +4,12 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import { usePathname } from 'next/navigation';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,16 +29,15 @@ export default function Navbar() {
       <div className="container mx-auto flex items-center justify-between px-6 py-4">
         <Link href="/">
           <motion.div 
-          className='text-3xl text-white py-1'
+          // className='text-3xl text-white py-1'
             whileHover={{ scale: 1.1 }}
           >
-            SynexCode
-            {/* <Image
-            width={200}
-            height={200}
-            src={'/assets/logo/SynexCode-Vertical-White.svg'}
+            <Image
+            width={100}
+            height={100}
+            src={pathname === '/' ? (scrolled ? '/assets/logo/SynexCode_White_Logo.png' : '/assets/logo/SynexCode_Blue_Logo.png') : '/assets/logo/SynexCode_White_Logo.png'}
             alt='SynexCode'
-            /> */}
+            />
           </motion.div>
         </Link>
 
