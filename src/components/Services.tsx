@@ -100,7 +100,7 @@ export default function Services() {
                    <span className='mx-3'>
                     Solutions
                     <motion.div
-                        className="absolute left-1/3 ml-16 -bottom-2 w-32 h-[6px] -translate-x-1/2"
+                        className="absolute left-1/3 ml-8 md:ml-16 md:-bottom-1 w-32 h-[6px] -translate-x-1/2 "
                         initial={{ scaleX: 0, opacity: 0, borderRadius: "50%" }}
                         whileInView={{ scaleX: 1, opacity: 1, borderRadius: "50px" }}
                         transition={{ duration: 0.6, delay: 0.3, ease: "easeInOut" }}
@@ -115,7 +115,7 @@ export default function Services() {
                     </span>for Your Success 
 
                     <motion.div
-                        className="absolute left-2/3 -bottom-2 w-32 h-[6px] -translate-x-1/2"
+                        className="absolute left-1/2 md:left-2/3 -bottom-2 w-32 h-[6px] -translate-x-1/2"
                         initial={{ scaleX: 0, opacity: 0, borderRadius: "50%" }}
                         whileInView={{ scaleX: 1, opacity: 1, borderRadius: "50px" }}
                         transition={{ duration: 0.6, delay: 0.3, ease: "easeInOut" }}

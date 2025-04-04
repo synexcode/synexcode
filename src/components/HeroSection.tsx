@@ -39,7 +39,7 @@ export default function HeroSection() {
 
       <div className="container px-6 md:px-12 lg:px-16 relative z-10">
         <motion.h1
-          className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 sm:mt-20 mt-40"
+          className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 sm:mt-20 mt-10"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}

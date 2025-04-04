@@ -45,7 +45,7 @@ export default function Navbar() {
         <Link href={'/'} className="text-white font-medium hover:text-gray-300">
               Home
             </Link>
-          {['Projects','Services', 'About', 'Contact'].map((item) => (
+          {['Portfolio','Services', 'About', 'Contact'].map((item) => (
             <Link key={item} href={`/${item.toLowerCase()}`} className="text-white font-medium hover:text-gray-300">
               {item}
             </Link>
@@ -88,7 +88,7 @@ export default function Navbar() {
     <Link href={'/'} className="text-white text-lg font-medium" onClick={() => setIsOpen(false)}>
       Home
     </Link>
-    {['Projects', 'Services', 'About', 'Contact'].map((item) => (
+    {['Portfolio', 'Services', 'About', 'Contact'].map((item) => (
       <Link key={item} href={`/${item.toLowerCase()}`} className="text-white text-lg font-medium" onClick={() => setIsOpen(false)}>
         {item}
       </Link>
