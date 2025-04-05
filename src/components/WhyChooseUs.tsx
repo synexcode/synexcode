@@ -67,7 +67,7 @@ export default function WhyChooseUs() {
         <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-10">
           At SynexCode, we specialize in delivering cutting-edge, secure, and high-performance software solutions that help businesses thrive in the digital age.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="flex overflow-x-auto md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 no-scrollbar">
           {features.map((feature, index) => (
             <motion.div 
               key={index} 
@@ -77,7 +77,7 @@ export default function WhyChooseUs() {
               transition={{ duration: 0.5, delay: index * 0.2 }}
               viewport={{ once: false }}
             >
-              <CheckCircle className="text-[#FF8A00] w-20 h-20 mr-4" />
+              <CheckCircle className="text-[#FF8A00] w-36 md:w-20 h-36 md:h-20 mr-4" />
               <div className="text-left">
                 <h3 className="text-xl font-semibold text-[#008EAA]">{feature.title}</h3>
                 <p className="text-gray-600">{feature.description}</p>

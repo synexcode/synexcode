@@ -37,40 +37,46 @@ export default function OurValues() {
                 />
             </motion.h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                {values.map((value, index) => (
-                    <motion.div
-                        key={index}
-                        className="flex flex-col items-center p-6 rounded-xl bg-[#008EAA] backdrop-blur-lg border border-white/20 shadow-lg transition-transform transform hover:scale-105"
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: index * 0.2, ease: "easeOut" }}
-                        viewport={{ once: false }}
-                    >
-                        <div className="w-16 h-16 flex items-center justify-center text-white bg-gradient-to-r from-[#FF8A00] to-[#E52E71] rounded-full shadow-lg">
-                            {value.icon}
-                        </div>
-                        <h3 className="text-xl font-semibold mt-4 relative text-white">
-                            {value.title}
-                            <motion.div
-                                    className="absolute left-0 -bottom-2 w-28 h-[6px]" // Adjusted width to fit under name
-                                    initial={{ scaleX: 0, opacity: 0, borderRadius: "50%" }}
-                                    whileInView={{ scaleX: 1, opacity: 1, borderRadius: "50px" }}
-                                    transition={{ duration: 0.6, delay: 0.3, ease: "easeInOut" }}
-                                    viewport={{ once: false }}
-                                    style={{
-                                        boxShadow: "0px 0px 10px rgba(255, 138, 0, 0.8), 0px 0px 20px rgba(229, 46, 113, 0.9)", // Glowing effect
-                                        transformOrigin: "left", // Animation starts from the left
-                                        background: "linear-gradient(90deg, #FF8A00, #E52E71)", // Gradient for vibrant effect
-                                        maskImage: "radial-gradient(circle, white 60%, transparent 100%)", // Smooth edges effect
-                                    }}
-                                />
-                        </h3>
+            <div className="flex overflow-x-auto md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 no-scrollbar px-4">
+  {values.map((value, index) => (
+    <motion.div
+      key={index}
+      className="flex-shrink-0 w-72 md:w-auto flex flex-col items-center p-6 rounded-xl bg-[#008EAA] backdrop-blur-lg border border-white/20 shadow-lg transition-transform transform hover:scale-105"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: index * 0.2, ease: "easeOut" }}
+      viewport={{ once: false }}
+    >
+      {/* Icon */}
+      <div className="w-16 h-16 flex items-center justify-center text-white bg-gradient-to-r from-[#FF8A00] to-[#E52E71] rounded-full shadow-lg">
+        {value.icon}
+      </div>
 
-                        <p className="text-gray-300 text-center mt-2">{value.desc}</p>
-                    </motion.div>
-                ))}
-            </div>
+      {/* Title with animated underline */}
+      <h3 className="text-xl font-semibold mt-4 relative text-white">
+        {value.title}
+        <motion.div
+          className="absolute left-0 -bottom-2 w-28 h-[6px]"
+          initial={{ scaleX: 0, opacity: 0, borderRadius: "50%" }}
+          whileInView={{ scaleX: 1, opacity: 1, borderRadius: "50px" }}
+          transition={{ duration: 0.6, delay: 0.3, ease: "easeInOut" }}
+          viewport={{ once: false }}
+          style={{
+            boxShadow:
+              "0px 0px 10px rgba(255, 138, 0, 0.8), 0px 0px 20px rgba(229, 46, 113, 0.9)",
+            transformOrigin: "left",
+            background: "linear-gradient(90deg, #FF8A00, #E52E71)",
+            maskImage: "radial-gradient(circle, white 60%, transparent 100%)",
+          }}
+        />
+      </h3>
+
+      {/* Description */}
+      <p className="text-gray-300 text-center mt-2">{value.desc}</p>
+    </motion.div>
+  ))}
+</div>
+
         </section>
     );
 }
