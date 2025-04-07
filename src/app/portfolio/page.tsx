@@ -1,43 +1,106 @@
-'use client'
+"use client"
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
-const portfolioItems = [
+const projectData = [
   {
+    id: 1,
+    title: "Bally Website Research",
+    subtitle: "UX case study",
+    tag: "Next.Js Development",
+    image: "/projects/proj1.png",
+  },
+  {
+    id: 2,
     title: "AI Chatbot for E-Commerce",
     description: "GPT-powered assistant for real-time customer interaction & automation.",
-    image: "/assets/portfolio/chatbot.png",
-    link: "#",
+    tag: "AI Project",
+    image: "/projects/proj2.png",
   },
   {
-    title: "Furniture Mobile App",
-    description: "Modern mobile UI with Flutter and real-time DB support.",
-    image: "/assets/portfolio/furniture-app.png",
-    link: "#",
+    id: 3,
+    title: "Bally Website Research",
+    subtitle: "UX case study",
+    tag: "Web Project",
+    image: "/projects/proj3.png",
   },
   {
-    title: "Restaurant Website",
-    description: "Food ordering platform with CMS, responsive UI, and seamless UX.",
-    image: "/assets/portfolio/restaurant.png",
-    link: "#",
+    id: 4,
+    title: "Bally Website Research",
+    subtitle: "AI case study",
+    tag: "AI Project",
+    image: "/projects/proj4.png",
   },
   {
-    title: "AI Resume Builder",
-    description: "Dynamic resume generator with AI suggestions and shareable links.",
-    image: "/assets/portfolio/resume-builder.png",
-    link: "#",
+    id: 5,
+    title: "Bally Website Research",
+    subtitle: "AI case study",
+    tag: "ChatBoat",
+    image: "/projects/proj5.png",
+  },
+  {
+    id: 6,
+    title: "Bally Website Research",
+    subtitle: "AI case study",
+    tag: "Mern Stalk Project",
+    image: "/projects/proj6.png",
+  },
+  {
+    id: 7,
+    title: "Bally Website Research",
+    subtitle: "AI case study",
+    tag: "UI desing",
+    image: "/projects/proj7.png",
+  },
+  {
+    id: 8,
+    title: "Bally Website Research",
+    subtitle: "AI case study",
+    tag: "Graphic Designing",
+    image: "/projects/proj8.png",
+  },
+  {
+    id: 9,
+    title: "Bally Website Research",
+    subtitle: "AI case study",
+    tag: "Mobile App development",
+    image: "/projects/proj8.png",
+  },
+  {
+    id: 10,
+    title: "Bally Website Research",
+    subtitle: "AI case study",
+    tag: "Degital Marketinh",
+    image: "/projects/proj8.png",
+  },
+  {
+    id: 11,
+    title: "Bally Website Research",
+    subtitle: "AI case study",
+    tag: "Contant writing",
+    image: "/projects/proj8.png",
   },
 ];
 
-export default function PortfolioPage() {
+export default function RecentProjects() {
+  const [activeTag, setActiveTag] = useState("All");
+
+  const allTags = ["All", ...Array.from(new Set(projectData.map((project) => project.tag)))];
+
+  const filteredProjects =
+    activeTag === "All"
+      ? projectData
+      : projectData.filter((project) => project.tag === activeTag);
+
   return (
-    <>
-      {/* Hero Section */}
+    <div>
+      {/* Header Section */}
       <section className="relative w-full h-[80vh] flex items-center justify-center text-center text-white">
         <div className="absolute inset-0 z-0">
-          <Image 
-            src="/assets/portfolio.jpg"
+          <Image
+            src="/assets/portfolio.png"
             alt="Portfolio Background"
             layout="fill"
             objectFit="cover"
@@ -46,7 +109,7 @@ export default function PortfolioPage() {
           <div className="absolute inset-0 bg-[#008EAA] opacity-80" />
         </div>
 
-        <motion.div 
+        <motion.div
           className="relative z-10 max-w-3xl px-6"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -70,44 +133,70 @@ export default function PortfolioPage() {
         </motion.div>
       </section>
 
-      {/* Portfolio Grid Section */}
-      <section className="py-20 bg-white px-6">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12 text-[#0f172a]">
-            Featured Projects
-          </h2>
-          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
-            {portfolioItems.map((item, index) => (
-              <motion.div
-                key={index}
-                whileHover={{ y: -10 }}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="rounded-2xl shadow-lg border border-gray-100 overflow-hidden bg-white"
-              >
-                <Image 
-                  src={item.image}
-                  alt={item.title}
-                  width={600}
-                  height={300}
-                  className="w-full h-52 object-cover"
-                />
-                <div className="p-5">
-                  <h3 className="text-xl font-semibold text-[#0f172a] mb-2">{item.title}</h3>
-                  <p className="text-gray-600 text-sm mb-4">{item.description}</p>
-                  <Link href={item.link}>
-                    <span className="inline-block px-4 py-2 text-sm border border-[#008EAA] text-[#008EAA] hover:bg-[#008EAA] hover:text-white rounded-full transition duration-300">
-                      View Project
-                    </span>
-                  </Link>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+      {/* Filter Buttons */}
+      <div className="py-20 bg-white lg:px-28">
+        <h2 className="text-black text-4xl font-bold mb-8">Recent Projects</h2>
+
+        <div className="flex flex-wrap gap-4 mb-12">
+          {allTags.map((tag) => (
+            <button
+              key={tag}
+              onClick={() => setActiveTag(tag)}
+              className={`px-4 py-2 rounded-full border ${
+                activeTag === tag
+                  ? "bg-[#008EAA] text-white"
+                  : "border-gray-300 text-gray-600 hover:bg-gray-100"
+              }`}
+            >
+              {tag}
+            </button>
+          ))}
         </div>
-      </section>
-    </>
+
+        {/* Project Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          {filteredProjects.map((project) => (
+            <div key={project.id} className="flex items-center gap-6">
+              <div className="flex-1">
+                <p className="text-sm text-gray-400 uppercase mb-2">
+                  {project.tag}
+                </p>
+                <h3 className="text-3xl font-bold text-gray-900 mb-4">
+                  {project.title}
+                </h3>
+                {project.description && (
+                  <p className="text-sm text-gray-500 mb-1">
+                    {project.description}
+                  </p>
+                )}
+                <div className="text-[#008eaa]">
+                  <svg
+                    className="w-6 h-6 rotate-45"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M5 12h14M12 5l7 7-7 7"
+                    />
+                  </svg>
+                </div>
+              </div>
+
+              <div className="flex-1 w-full h-52 overflow-hidden bg-gray-200 rounded-xl">
+                <img
+                  src={project.image}
+                  alt={`Project ${project.id}`}
+                  className="object-cover w-full h-full"
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
   );
 }
