@@ -13,8 +13,9 @@ export default function ContactUs() {
 
         // Create FormData from the form
         const formData = new FormData(event.target as HTMLFormElement);
-        formData.append("access_key", "5e8fd9ac-0cb9-4875-85bc-a4d14b1bc498");
-
+        const contactKey = process.env.NEXT_PUBLIC_CONTACT_KEY;
+        formData.append("access_key", contactKey || "");
+        
         // Convert FormData to JSON
         const object = Object.fromEntries(formData);
         const json = JSON.stringify(object);

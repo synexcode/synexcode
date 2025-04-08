@@ -7,10 +7,17 @@ import { useState } from "react";
 const projectData = [
   {
     id: 1,
-    title: "Bally Website Research",
-    subtitle: "UX case study",
+    title: "Ecommerce Website",
+    description: "A sleek, responsive, and user-friendly eCommerce website for makeup products, built with Next.js and Tailwind CSS.",
     tag: "Next.Js Development",
     image: "/projects/proj1.png",
+  },
+  {
+    id: 2,
+    title: "Ecommerce Website",
+    description: "A sleek, responsive, and user-friendly eCommerce website for makeup products, built with Next.js and Tailwind CSS.",
+    tag: "Next.Js Development",
+    image: "/projects/proj2.png",
   },
   {
     id: 2,
@@ -278,7 +285,7 @@ export default function RecentProjects() {
           {filteredProjects.map((project) => (
             <div
               key={project.id}
-              className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-5"
+              className="flex  flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-5"
             >
               <div className="flex-1 w-full">
                 <p className="text-xs sm:text-sm text-gray-400 uppercase mb-1 sm:mb-2">
@@ -308,8 +315,8 @@ export default function RecentProjects() {
                   </svg>
                 </div>
               </div>
-
-              <div className="flex-1 w-full h-40 sm:h-52 overflow-hidden bg-gray-200 rounded-xl">
+              {/* w-full sm:flex-1 h-40 sm:h-52 overflow-hidden bg-gray-200 rounded-xl  */}
+              <div className=" w-full sm:flex-1 h-40 sm:h-52 overflow-hidden bg-gray-200 rounded-xl ">
                 <img
                   src={project.image}
                   alt={`Project ${project.id}`}
