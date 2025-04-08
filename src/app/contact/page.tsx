@@ -13,8 +13,8 @@ export default function ContactUs() {
 
         // Create FormData from the form
         const formData = new FormData(event.target as HTMLFormElement);
-        formData.append("access_key", process.env.CONTACT_KEY as string);
-
+        const contactKey = process.env.NEXT_PUBLIC_CONTACT_KEY;
+        formData.append("access_key", contactKey || "");
         // Convert FormData to JSON
         const object = Object.fromEntries(formData);
         const json = JSON.stringify(object);
