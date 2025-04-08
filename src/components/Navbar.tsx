@@ -26,16 +26,16 @@ export default function Navbar() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="container mx-auto flex items-center justify-between px-6 py-4">
+      <div className="container mx-auto flex items-center justify-between px-6 py-3">
         <Link href="/">
           <motion.div 
           // className='text-3xl text-white py-1'
             whileHover={{ scale: 1.1 }}
           >
             <Image
-            width={100}
-            height={100}
-            src={pathname === '/' ? (scrolled ? '/assets/logo/SynexCode_White_Logo.png' : '/assets/logo/SynexCode_Blue_Logo.png') : '/assets/logo/SynexCode_White_Logo.png'}
+            width={170}
+            height={170}
+            src={pathname === '/' ? (scrolled ? '/assets/logo/SynexCode_White_Horizontal_Logo.png' : '/assets/logo/SynexCode_Blue_Horizontal_Logo.png') : '/assets/logo/SynexCode_White_Horizontal_Logo.png'}
             alt='SynexCode'
             />
           </motion.div>

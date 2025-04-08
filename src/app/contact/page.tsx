@@ -204,8 +204,8 @@ export default function ContactUs() {
                                     animate={submitted ? { opacity: 0, x: -10 } : { opacity: 1, x: 0 }}
                                     transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
                                 >
-                                    <input type={field.type} id={field.id} name={field.id} className="input-field peer text-black" required placeholder=" " />
-                                    <label htmlFor={field.id} className="input-label">{field.label}</label>
+                                    <input type={field.type} id={field.id} name={field.id} className="input-field peer  text-black" required placeholder=" " />
+                                    <label htmlFor={field.id} className="input-label text-[#008EAA]">{field.label}</label>
                                 </motion.div>
                             ))}
                         </div>
@@ -255,7 +255,7 @@ export default function ContactUs() {
                     outline: none;
                     transition: all 0.3s ease;
                     background: #f9f9f9;
-                    color: black;
+                    color: #008EAA;
                 }
                 .input-field:focus ~ .input-label,
                 .input-field:not(:placeholder-shown) ~ .input-label {

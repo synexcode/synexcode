@@ -95,22 +95,23 @@ export default function Services() {
           }}
         >
           Tailored
-          <span className='mx-3'>
-            Solutions
-            <motion.div
-              className="absolute left-1/3 ml-8 md:ml-16 md:-bottom-1 w-32 h-[6px] -translate-x-1/2"
-              initial={{ scaleX: 0, opacity: 0, borderRadius: "50%" }}
-              whileInView={{ scaleX: 1, opacity: 1, borderRadius: "50px" }}
-              transition={{ duration: 0.6, delay: 0.3, ease: "easeInOut" }}
-              viewport={{ once: false }}
-              style={{
-                boxShadow: "0px 0px 10px rgba(255, 138, 0, 0.8), 0px 0px 20px rgba(229, 46, 113, 0.9)",
-                transformOrigin: "center",
-                background: "linear-gradient(90deg, #FF8A00, #E52E71)",
-                maskImage: "radial-gradient(circle, white 60%, transparent 100%)",
-              }}
-            />
-          </span>
+        <span className='mx-3 relative'>
+  Solutions
+  <motion.div
+    className="hidden md:block absolute -left-3 ml-8 md:ml-16 md:-bottom-1 w-32 h-[6px] -translate-x-1/2"
+    initial={{ scaleX: 0, opacity: 0, borderRadius: "50%" }}
+    whileInView={{ scaleX: 1, opacity: 1, borderRadius: "50px" }}
+    transition={{ duration: 0.6, delay: 0.3, ease: "easeInOut" }}
+    viewport={{ once: false }}
+    style={{
+      boxShadow: "0px 0px 10px rgba(255, 138, 0, 0.8), 0px 0px 20px rgba(229, 46, 113, 0.9)",
+      transformOrigin: "center",
+      background: "linear-gradient(90deg, #FF8A00, #E52E71)",
+      maskImage: "radial-gradient(circle, white 60%, transparent 100%)",
+    }}
+  />
+</span>
+
           for Your Success
           <motion.div
             className="absolute left-1/2 md:left-2/3 -bottom-2 w-32 h-[6px] -translate-x-1/2"
@@ -152,7 +153,7 @@ export default function Services() {
                 <h3 className="text-xl font-semibold text-gray-800 mb-2 relative">
                   {service.title}
                   <motion.div
-                    className="absolute left-0 w-28 h-[6px] mt-1"
+                    className="absolute left-1/3 w-28 h-[6px] mt-1"
                     initial={{ scaleX: 0, opacity: 0, borderRadius: "50%" }}
                     whileInView={{ scaleX: 1, opacity: 1, borderRadius: "50px" }}
                     transition={{ duration: 0.6, delay: 0.3, ease: "easeInOut" }}
