@@ -84,6 +84,124 @@ const projectData = [
   },
 ];
 
+// export default function RecentProjects() {
+//   const [activeTag, setActiveTag] = useState("All");
+
+//   const allTags = ["All", ...Array.from(new Set(projectData.map((project) => project.tag)))];
+
+//   const filteredProjects =
+//     activeTag === "All"
+//       ? projectData
+//       : projectData.filter((project) => project.tag === activeTag);
+
+//   return (
+//     <div>
+//       {/* Header Section */}
+//       <section className="relative w-full h-[80vh] flex items-center justify-center text-center text-white">
+//         <div className="absolute inset-0 z-0">
+//           <Image
+//             src="/assets/portfolio.png"
+//             alt="Portfolio Background"
+//             layout="fill"
+//             objectFit="cover"
+//             quality={100}
+//           />
+//           <div className="absolute inset-0 bg-[#008EAA] opacity-80" />
+//         </div>
+
+//         <motion.div
+//           className="relative z-10 max-w-3xl px-6"
+//           initial={{ opacity: 0, y: 50 }}
+//           animate={{ opacity: 1, y: 0 }}
+//           transition={{ duration: 0.8, ease: "easeInOut" }}
+//         >
+//           <h1 className="text-4xl md:text-5xl font-bold drop-shadow-lg">
+//             Our Portfolio
+//           </h1>
+//           <p className="mt-4 text-lg md:text-xl text-gray-200">
+//             Turning your vision into powerful digital experiences.
+//           </p>
+//           <Link href="/contact">
+//             <motion.button
+//               whileHover={{ scale: 1.1 }}
+//               whileTap={{ scale: 0.95 }}
+//               className="mt-6 px-6 py-3 bg-white text-[#008EAA] font-semibold rounded-full shadow-md hover:bg-[#f1f1f1] transition"
+//             >
+//               Let’s Collaborate
+//             </motion.button>
+//           </Link>
+//         </motion.div>
+//       </section>
+
+//       {/* Filter Buttons */}
+//       <div className="py-20 bg-white lg:px-28">
+//         <h2 className="text-black text-4xl font-bold mb-8">Recent Projects</h2>
+
+//         <div className="flex flex-wrap gap-4 mb-12">
+//           {allTags.map((tag) => (
+//             <button
+//               key={tag}
+//               onClick={() => setActiveTag(tag)}
+//               className={`px-4 py-2 rounded-full border ${
+//                 activeTag === tag
+//                   ? "bg-[#008EAA] text-white"
+//                   : "border-gray-300 text-gray-600 hover:bg-gray-100"
+//               }`}
+//             >
+//               {tag}
+//             </button>
+//           ))}
+//         </div>
+
+//         {/* Project Grid */}
+//         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+//           {filteredProjects.map((project) => (
+//             <div key={project.id} className="flex items-center gap-6">
+//               <div className="flex-1">
+//                 <p className="text-sm text-gray-400 uppercase mb-2">
+//                   {project.tag}
+//                 </p>
+//                 <h3 className="text-3xl font-bold text-gray-900 mb-4">
+//                   {project.title}
+//                 </h3>
+//                 {project.description && (
+//                   <p className="text-sm text-gray-500 mb-1">
+//                     {project.description}
+//                   </p>
+//                 )}
+//                 <div className="text-[#008eaa]">
+//                   <svg
+//                     className="w-6 h-6 rotate-45"
+//                     fill="none"
+//                     stroke="currentColor"
+//                     strokeWidth="2"
+//                     viewBox="0 0 24 24"
+//                   >
+//                     <path
+//                       strokeLinecap="round"
+//                       strokeLinejoin="round"
+//                       d="M5 12h14M12 5l7 7-7 7"
+//                     />
+//                   </svg>
+//                 </div>
+//               </div>
+
+//               <div className="flex-1 w-full h-52 overflow-hidden bg-gray-200 rounded-xl">
+//                 <img
+//                   src={project.image}
+//                   alt={`Project ${project.id}`}
+//                   className="object-cover w-full h-full"
+//                 />
+//               </div>
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
+
+
 export default function RecentProjects() {
   const [activeTag, setActiveTag] = useState("All");
 
@@ -110,15 +228,15 @@ export default function RecentProjects() {
         </div>
 
         <motion.div
-          className="relative z-10 max-w-3xl px-6"
+          className="relative z-10 max-w-3xl px-4 sm:px-6"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
         >
-          <h1 className="text-4xl md:text-5xl font-bold drop-shadow-lg">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold drop-shadow-lg">
             Our Portfolio
           </h1>
-          <p className="mt-4 text-lg md:text-xl text-gray-200">
+          <p className="mt-4 text-base sm:text-lg md:text-xl text-gray-200">
             Turning your vision into powerful digital experiences.
           </p>
           <Link href="/contact">
@@ -134,15 +252,17 @@ export default function RecentProjects() {
       </section>
 
       {/* Filter Buttons */}
-      <div className="py-20 bg-white lg:px-28">
-        <h2 className="text-black text-4xl font-bold mb-8">Recent Projects</h2>
+      <div className="py-16 sm:py-20 bg-white px-4 sm:px-6 lg:px-28">
+        <h2 className="text-black text-3xl sm:text-4xl font-bold mb-8">
+          Recent Projects
+        </h2>
 
-        <div className="flex flex-wrap gap-4 mb-12">
+        <div className="flex flex-wrap gap-3 sm:gap-4 mb-12">
           {allTags.map((tag) => (
             <button
               key={tag}
               onClick={() => setActiveTag(tag)}
-              className={`px-4 py-2 rounded-full border ${
+              className={`px-4 py-2 rounded-full border text-sm sm:text-base ${
                 activeTag === tag
                   ? "bg-[#008EAA] text-white"
                   : "border-gray-300 text-gray-600 hover:bg-gray-100"
@@ -154,14 +274,17 @@ export default function RecentProjects() {
         </div>
 
         {/* Project Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-10 lg:gap-12">
           {filteredProjects.map((project) => (
-            <div key={project.id} className="flex items-center gap-6">
-              <div className="flex-1">
-                <p className="text-sm text-gray-400 uppercase mb-2">
+            <div
+              key={project.id}
+              className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-5"
+            >
+              <div className="flex-1 w-full">
+                <p className="text-xs sm:text-sm text-gray-400 uppercase mb-1 sm:mb-2">
                   {project.tag}
                 </p>
-                <h3 className="text-3xl font-bold text-gray-900 mb-4">
+                <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-1 sm:mb-2">
                   {project.title}
                 </h3>
                 {project.description && (
@@ -169,9 +292,9 @@ export default function RecentProjects() {
                     {project.description}
                   </p>
                 )}
-                <div className="text-[#008eaa]">
+                <div className="text-[#008eaa] mt-1 sm:mt-2">
                   <svg
-                    className="w-6 h-6 rotate-45"
+                    className="w-5 h-5 sm:w-6 sm:h-6 rotate-45"
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
@@ -186,7 +309,7 @@ export default function RecentProjects() {
                 </div>
               </div>
 
-              <div className="flex-1 w-full h-52 overflow-hidden bg-gray-200 rounded-xl">
+              <div className="flex-1 w-full h-40 sm:h-52 overflow-hidden bg-gray-200 rounded-xl">
                 <img
                   src={project.image}
                   alt={`Project ${project.id}`}
