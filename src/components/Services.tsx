@@ -1,6 +1,8 @@
 'use client';
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+
+
 
 const services = [
   {
@@ -86,9 +88,22 @@ const services = [
   }
 ];
 
+
+
 export default function Services() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [selectedService, setSelectedService] = useState<any | null>(null);
+  const scrollRef = useRef<HTMLDivElement | null>(null);
+
+  const scroll = (direction: "left" | "right") => {
+    if (scrollRef.current) {
+      const scrollAmount = 300; // Customize as needed
+      scrollRef.current.scrollBy({
+        left: direction === "left" ? -scrollAmount : scrollAmount,
+        behavior: "smooth",
+      });
+    }
+  };
 
   return (
     <section className="py-16 bg-gray-100">
@@ -138,48 +153,72 @@ export default function Services() {
         </motion.h2>
 
         {/* Responsive Scrollable Cards on Mobile */}
-        <div className="flex overflow-x-auto gap-6 snap-x snap-mandatory md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8 no-scrollbar">
-          {services.map((service, index) => (
+        <div className="relative">
+  {/* Left Button */}
+  <button
+    className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-[#008EAA] text-white p-2 rounded-full shadow-md z-10 md:hidden"
+    onClick={() => scroll("left")}
+  >
+    ◀
+  </button>
+
+  {/* Scrollable Services */}
+  <div
+    ref={scrollRef}
+    className="flex overflow-x-auto gap-6 snap-x snap-mandatory md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8 no-scrollbar"
+  >
+    {services.map((service, index) => (
+      <motion.div
+        key={index}
+        className="relative flex-shrink-0 w-80 md:w-auto p-6 bg-white shadow-lg rounded-lg hover:shadow-xl transition overflow-hidden cursor-pointer snap-start"
+        whileHover={{ scale: 1.05 }}
+        onMouseEnter={() => setHoveredIndex(index)}
+        onMouseLeave={() => setHoveredIndex(null)}
+        onClick={() => setSelectedService(service)}
+      >
+        {hoveredIndex === index && (
+          <motion.div
+            className="absolute inset-0 bg-cover bg-center opacity-40 transition duration-300"
+            style={{ backgroundImage: `url(${service.bg})` }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.4 }}
+            exit={{ opacity: 0 }}
+          />
+        )}
+        <div className="relative z-10">
+          <div className="text-5xl text-[#008EAA] mb-4">{service.icon}</div>
+          <h3 className="text-xl font-semibold text-gray-800 mb-2 relative">
+            {service.title}
+            {/* underline motion */}
             <motion.div
-              key={index}
-              className="relative flex-shrink-0 w-80 md:w-auto p-6 bg-white shadow-lg rounded-lg hover:shadow-xl transition overflow-hidden cursor-pointer snap-start"
-              whileHover={{ scale: 1.05 }}
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
-              onClick={() => setSelectedService(service)}
-            >
-              {hoveredIndex === index && (
-                <motion.div
-                  className="absolute inset-0 bg-cover bg-center opacity-40 transition duration-300"
-                  style={{ backgroundImage: `url(${service.bg})` }}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 0.4 }}
-                  exit={{ opacity: 0 }}
-                />
-              )}
-              <div className="relative z-10">
-                <div className="text-5xl text-[#008EAA] mb-4">{service.icon}</div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-2 relative">
-                  {service.title}
-                  <motion.div
-                    className="absolute left-1/3 w-28 h-[6px] mt-1"
-                    initial={{ scaleX: 0, opacity: 0, borderRadius: "50%" }}
-                    whileInView={{ scaleX: 1, opacity: 1, borderRadius: "50px" }}
-                    transition={{ duration: 0.6, delay: 0.3, ease: "easeInOut" }}
-                    viewport={{ once: false }}
-                    style={{
-                      boxShadow: "0px 0px 10px rgba(255, 138, 0, 0.8), 0px 0px 20px rgba(229, 46, 113, 0.9)",
-                      transformOrigin: "left",
-                      background: "linear-gradient(90deg, #FF8A00, #E52E71)",
-                      maskImage: "radial-gradient(circle, white 60%, transparent 100%)",
-                    }}
-                  />
-                </h3>
-                <p className="text-gray-600 mt-4">{service.description}</p>
-              </div>
-            </motion.div>
-          ))}
+              className="absolute left-1/3 w-28 h-[6px] mt-1"
+              initial={{ scaleX: 0, opacity: 0, borderRadius: "50%" }}
+              whileInView={{ scaleX: 1, opacity: 1, borderRadius: "50px" }}
+              transition={{ duration: 0.6, delay: 0.3, ease: "easeInOut" }}
+              viewport={{ once: false }}
+              style={{
+                boxShadow: "0px 0px 10px rgba(255, 138, 0, 0.8), 0px 0px 20px rgba(229, 46, 113, 0.9)",
+                transformOrigin: "left",
+                background: "linear-gradient(90deg, #FF8A00, #E52E71)",
+                maskImage: "radial-gradient(circle, white 60%, transparent 100%)",
+              }}
+            />
+          </h3>
+          <p className="text-gray-600 mt-4">{service.description}</p>
         </div>
+      </motion.div>
+    ))}
+  </div>
+
+  {/* Right Button */}
+  <button
+    className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-[#008EAA] text-white p-2 rounded-full shadow-md z-10 md:hidden"
+    onClick={() => scroll("right")}
+  >
+    ▶
+  </button>
+</div>
+
       </div>
 
       {/* Modal */}
