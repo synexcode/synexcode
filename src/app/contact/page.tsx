@@ -13,7 +13,7 @@ export default function ContactUs() {
 
         // Create FormData from the form
         const formData = new FormData(event.target as HTMLFormElement);
-        formData.append("access_key", "5e8fd9ac-0cb9-4875-85bc-a4d14b1bc498");
+        formData.append("access_key", process.env.CONTACT_KEY as string);
 
         // Convert FormData to JSON
         const object = Object.fromEntries(formData);
@@ -50,7 +50,7 @@ export default function ContactUs() {
             style={{ backgroundImage: "url('/assets/Slide2.jpg')" }}
         >
             <div className="absolute inset-0 bg-[#008EAA] opacity-80"></div>
-            <div className="relative z-10 max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-10 p-10 bg-white bg-opacity-95 rounded-3xl shadow-2xl">
+            <div className="relative z-10 max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-10 p-6 md:p-10 bg-white bg-opacity-95 rounded-3xl shadow-2xl">
                 {/* Left Side - Contact Info */}
                 
 <div>
@@ -168,7 +168,7 @@ export default function ContactUs() {
                     <motion.form
                         onSubmit={handleSubmit}
                         ref={formRef}
-                        className="bg-white shadow-xl rounded-3xl p-8 space-y-6"
+                        className="bg-white shadow-xl rounded-3xl p-4 md:p-8 space-y-6"
                         initial={{ opacity: 0, x: 20 }}
                         animate={submitted ? { opacity: 0, x: 20 } : { opacity: 1, x: 0 }}
                         transition={{ duration: 0.6 }}
@@ -268,7 +268,7 @@ export default function ContactUs() {
                     left: 14px;
                     top: 14px;
                     font-size: 16px;
-                    color: #888;
+                    color: #008EAA;
                     transition: all 0.3s ease;
                     background: white;
                     padding: 0 5px;
