@@ -255,7 +255,7 @@ export default function ContactUs() {
                     outline: none;
                     transition: all 0.3s ease;
                     background: #f9f9f9;
-                    color: #008EAA;
+                    color: black;
                 }
                 .input-field:focus ~ .input-label,
                 .input-field:not(:placeholder-shown) ~ .input-label {

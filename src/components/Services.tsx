@@ -31,6 +31,15 @@ const services = [
     bg: "/assets/services/ai-chatbot.png"
   },
   {
+    icon: "🎨",
+    title: "UI/UX Design",
+    description: "Creating user-friendly and visually appealing designs.",
+    benefits: ["Intuitive interface", "Enhanced user experience", "Mobile responsive"],
+    technologies: ["Figma", "Sketch", "Adobe XD"],
+    languages: ["English"],
+    bg: "/assets/services/uiux-designing.jpg"
+  },
+  {
     icon: "📈",
     title: "Digital Marketing",
     description: "SEO, social media, and online marketing strategies to grow your brand.",
@@ -40,13 +49,13 @@ const services = [
     bg: "/assets/services/digital-marketing.jpg"
   },
   {
-    icon: "🎨",
-    title: "UI/UX Design",
-    description: "Creating user-friendly and visually appealing designs.",
-    benefits: ["Intuitive interface", "Enhanced user experience", "Mobile responsive"],
-    technologies: ["Figma", "Sketch", "Adobe XD"],
+    icon: "🖌️",
+    title: "Graphic Designing",
+    description: "Creative and impactful graphic designs to elevate your brand identity.",
+    benefits: ["Unique branding", "High-quality visuals", "Custom illustrations"],
+    technologies: ["Adobe Photoshop", "Illustrator", "Canva"],
     languages: ["English"],
-    bg: "/assets/services/uiux-designing.jpg"
+    bg: "/assets/services/graphic-designing.jpg"
   },
   {
     icon: "🛠️",
