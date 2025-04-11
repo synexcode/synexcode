@@ -3,7 +3,6 @@ import OurFounders from '@/components/OurFounders';
 import OurValues from '@/components/OurValues';
 import WhyChooseUs from '@/components/WhyChooseUs';
 import { motion } from 'framer-motion';
-
 export default function About() {
   return (
     <>

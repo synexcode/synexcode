@@ -1,11 +1,9 @@
 
 "use client";
-
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-
 const projectData = [
   {
     id: 1,
@@ -78,6 +76,7 @@ const projectData = [
   {
     id: 7,
     title: "Medic – Mobile App",
+    link:"https://drive.google.com/file/d/1a7p9g7yC9OllgGXN6VDqDHtJhhYqy3FC/view",
     description:"A user-friendly mobile application built using Flutter and Dart, allowing users to book online doctor appointments and order medicines from the comfort of their home. Designed with convenience and accessibility in mind for a seamless healthcare experience.",
     subtitle: "AI case study",
     tag: ["Mobile App Development"],
@@ -96,6 +95,7 @@ const projectData = [
   {
     id: 9,
     title: "UI Design (Figma)",
+    link:"https://www.figma.com/design/xAvCZoIe74JVGEZAfBptTJ/Al-Midad-Maktab-Foudation?node-id=0-1&p=f&t=3QLdtIXeyA4zilVZ-0",
     description:
       "A modern and clean UI design created in Figma for a web-based foundation platform. Focused on user experience and accessibility, it showcases well-structured layouts, intuitive navigation, and a professional aesthetic ideal for development.",
     subtitle: "AI case study",
@@ -121,10 +121,8 @@ const projectData = [
     image: "/projects/proj6.png",
   },
 ];
-
 export default function RecentProjects() {
   const [activeTag, setActiveTag] = useState("All");
-
   const allTags = [
     "All",
     ...Array.from(
@@ -146,7 +144,7 @@ export default function RecentProjects() {
         );
 
   return (
-    <div>
+    <div className="bg-gray-100">
       <section className="relative w-full h-[80vh] flex items-center justify-center text-center text-white">
         <div className="absolute inset-0 z-0">
           <Image
@@ -183,7 +181,7 @@ export default function RecentProjects() {
         </motion.div>
       </section>
 
-      <div className="py-16 sm:py-20 bg-white px-4 sm:px-6 lg:px-28">
+      <div className="py-16 sm:py-20 bg-gray-100 px-4 sm:px-6 lg:px-28">
         <h2 className="text-black text-3xl sm:text-4xl font-bold mb-8">Our Top Projects</h2>
         <div className="flex flex-wrap gap-3 sm:gap-4 mb-12">
           {allTags.map((tag) => (
@@ -205,8 +203,15 @@ export default function RecentProjects() {
           {filteredProjects.map((project) => (
             <div
               key={project.id}
-              className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-5"
+              className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-5  bg-white shadow-lg rounded-xl p-4 sm:p-6 transition-transform transform hover:scale-105"
             >
+              <div className="w-full lg:hidden block sm:flex-1 h-[230px] sm:h-52 overflow-hidden bg-gray-200 rounded-xl">
+                <img
+                  src={project.image || ""}
+                  alt={`Project ${project.id}`}
+                  className="object-cover w-full h-full"
+                />
+              </div>
               <div className="flex-1 w-full">
                 <p className="text-xs sm:text-sm text-gray-400 uppercase mb-1 sm:mb-2">
                   {Array.isArray(project.tag) ? project.tag.join(", ") : project.tag}
@@ -217,7 +222,9 @@ export default function RecentProjects() {
                 {project.description && (
                   <p className="text-sm text-gray-500 mb-1">{project.description}</p>
                 )}
+               
                 <div className="text-[#008eaa] mt-1 sm:mt-2">
+                <Link href={project.link || ""} target="_blank">
                   <svg
                     className="w-7 h-7 sm:w-7 sm:h-7 -rotate-45"
                     fill="none"
@@ -231,9 +238,11 @@ export default function RecentProjects() {
                       d="M5 12h14M12 5l7 7-7 7"
                     />
                   </svg>
+                  </Link>
                 </div>
+               
               </div>
-              <div className="w-full sm:flex-1 h-40 sm:h-52 overflow-hidden bg-gray-200 rounded-xl">
+              <div className="w-full lg:block hidden sm:flex-1 h-40 sm:h-52 overflow-hidden bg-gray-200 rounded-xl">
                 <img
                   src={project.image || ""}
                   alt={`Project ${project.id}`}
