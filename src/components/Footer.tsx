@@ -3,7 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { FaFacebookF, FaLinkedinIn, FaGithub, FaInstagram } from 'react-icons/fa';
+import { FaFacebookF, FaLinkedinIn, FaWhatsapp, FaInstagram } from 'react-icons/fa';
 
 export default function Footer() {
   return (
@@ -69,10 +69,10 @@ export default function Footer() {
           </ul>
 
           <div className="flex space-x-4 mt-4">
-            <a href="https://www.linkedin.com/in/synex-code-119039359/" className="text-gray-400 hover:text-white transition"><FaLinkedinIn /></a>
-            <a href="https://www.instagram.com/synexcode/?hl=en" className="text-gray-400 hover:text-white transition"><FaInstagram /></a>
-            <a href="https://www.facebook.com/profile.php?id=61574156617831" className="text-gray-400 hover:text-white transition"><FaFacebookF /></a>
-            <a href="https://github.com/synexcode" className="text-gray-400 hover:text-white transition"><FaGithub /></a>
+            <Link href="https://www.linkedin.com/company/synexcode/?viewAsMember=true" className="text-gray-400 hover:text-white transition"><FaLinkedinIn /></Link>
+            <Link href="https://www.instagram.com/synexcode/?hl=en" className="text-gray-400 hover:text-white transition"><FaInstagram /></Link>
+            <Link href="https://www.facebook.com/profile.php?id=61575022414136" className="text-gray-400 hover:text-white transition"><FaFacebookF /></Link>
+            <Link href="https://wa.me/923312144766" className="text-gray-400 hover:text-white text-lg transition"><FaWhatsapp /></Link>
           </div>
         </div>
       </div>

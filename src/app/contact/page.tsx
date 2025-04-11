@@ -109,10 +109,10 @@ export default function ContactUs() {
                         viewport={{ once: false }}
                     >
                         {[
-                            { Icon: FaLinkedinIn, link: "https://www.linkedin.com/in/synex-code-119039359/" },
+                            { Icon: FaLinkedinIn, link: "https://www.linkedin.com/company/synexcode/?viewAsMember=true" },
                             { Icon: FaWhatsapp, link: "https://wa.me/923312144766" },
                             { Icon: FaInstagram, link: "https://www.instagram.com/synexcode/?hl=en" },
-                            { Icon: FaFacebookF, link: "https://www.facebook.com/profile.php?id=61574156617831" },
+                            { Icon: FaFacebookF, link: "https://www.facebook.com/profile.php?id=61575022414136" },
                         ].map(({ Icon, link }, index) => (
                             <motion.a
                                 key={index}
