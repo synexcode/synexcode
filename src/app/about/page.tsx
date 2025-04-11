@@ -9,7 +9,7 @@ export default function About() {
     <>
       <section
         className="relative flex items-center justify-center h-[80vh] bg-cover bg-center text-white"
-        style={{ backgroundImage: "url('/assets/Slide2.jpg')" }}
+        style={{ backgroundImage: "url('/assets/slide2.jpg')" }}
       >
         <div className="absolute inset-0 bg-[#008EAA] opacity-70"></div>
         <div className="relative z-10 text-center px-6 md:px-12">
