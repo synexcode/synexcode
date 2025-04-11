@@ -1,7 +1,6 @@
-import ContactSection from "@/components/Contact";
 import FAQs from "@/components/FAQs";
 import HeroSection from "@/components/HeroSection";
-import Portfolio from "@/components/Portfolio";
+import Portfolioo from "@/components/Portfolio";
 import Reviews from "@/components/Reviews";
 import Services from "@/components/Services";
 
@@ -11,10 +10,10 @@ export default function Home() {
    <>
    <HeroSection/>
    <Services/>
-   <Portfolio/>
+   <Portfolioo/>
    <Reviews/>
    <FAQs/>
-   <ContactSection/>
+   {/* <ContactSection/> */}
    </>
   );
 }

@@ -6,9 +6,9 @@ import { useState, useEffect } from 'react';
 
 const images = [
   '/assets/Slide1.jpg',
-  '/assets/Slide2.jpg',
-  '/assets/Slide3.jpg',
-  '/assets/Slide4.jpg'
+  '/assets/slide2.jpg',
+  '/assets/slide3.jpg',
+  '/assets/slide4.jpg'
 ];
 
 export default function HeroSection() {

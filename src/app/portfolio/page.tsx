@@ -1,231 +1,156 @@
-"use client"
+
+"use client";
+
+import { useState } from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { useState } from "react";
 
 const projectData = [
   {
     id: 1,
-    title: "Ecommerce Website",
-    description: "A sleek, responsive, and user-friendly eCommerce website for makeup products, built with Next.js and Tailwind CSS.",
-    tag: "Next.Js Development",
+    title: "Makeup Store",
+    link:"https://e-commerce-sigma-tan.vercel.app/",
+    description: "A beautifully designed and fully responsive makeup store built with Next.js. Features smooth navigation, product listings, and a clean UI optimized for all devices",
+    tag: ["Web Development"],
     image: "/projects/proj1.png",
   },
   {
     id: 2,
-    title: "Ecommerce Website",
-    description: "A sleek, responsive, and user-friendly eCommerce website for makeup products, built with Next.js and Tailwind CSS.",
-    tag: "Next.Js Development",
-    image: "/projects/proj2.png",
-  },
-  {
-    id: 2,
-    title: "AI Chatbot for E-Commerce",
-    description: "GPT-powered assistant for real-time customer interaction & automation.",
-    tag: "AI Project",
+    title: "Nike Store",
+    link:"https://nikestoregiaic.vercel.app/",
+    description: "A modern, fully responsive online store for Nike products, developed with Next.js. This eCommerce site features smooth navigation, easy product search, and an intuitive user interface optimized for various devices.",
+    tag: ["Web Development"],
     image: "/projects/proj2.png",
   },
   {
     id: 3,
-    title: "Bally Website Research",
+    title: "Green Special Chatbot",
+    link:"https://green-special.vercel.app/",
+    description : "A JavaScript-powered chatbot designed for a food delivery service. It helps users browse menus, place orders, and get responses in real-time through a sleek and intuitive interface.",
     subtitle: "UX case study",
-    tag: "Web Project",
-    image: "/projects/proj3.png",
+    tag: ["Chatbot"],
+    image: "/projects/chatbot1.jpg",
   },
   {
     id: 4,
-    title: "Bally Website Research",
+    title: "Sportswear Store",
+    link:"https://sportswears.vercel.app/",
     subtitle: "AI case study",
-    tag: "AI Project",
+    description: "A sleek, responsive online sportswear store created with Next.js and Tailwind CSS. The site offers an intuitive shopping experience with fast loading times and smooth navigation for a variety of sports products.",
+    tag: ["Web Development"],
     image: "/projects/proj4.png",
   },
   {
     id: 5,
-    title: "Bally Website Research",
-    subtitle: "AI case study",
-    tag: "ChatBoat",
-    image: "/projects/proj5.png",
+    title: "Quiz Bot",
+    description:"An interactive chatbot that quizzes users with multiple-choice questions. Built with JavaScript, it delivers instant feedback, tracks scores, and creates an engaging quiz experience.",
+    link:"https://kashan-s-quiz-bot.vercel.app/",
+    tag: ["Chatbot"],
+    image: "/projects/chatbot2.jpg",
   },
   {
     id: 6,
-    title: "Bally Website Research",
-    subtitle: "AI case study",
-    tag: "Mern Stalk Project",
-    image: "/projects/proj6.png",
+    title: "University",
+    link:"https://eduforduniversityclone.netlify.app/",
+    description:"A responsive and modern clone of a university website, built using HTML, CSS, and JavaScript. This project highlights clean layout design, smooth scrolling, and structured content sections perfect for showcasing academic programs and campus life.",
+    tag: ["Web Development"],
+    image: "/projects/proj5.png",
   },
   {
-    id: 7,
-    title: "Bally Website Research",
+    id: 12,
+    title: "KM Foods – Q-Commerce",
+    link:"https://km-foods.vercel.app/",
     subtitle: "AI case study",
-    tag: "UI desing",
+    description: "A dynamic food delivery website built with Next.js, offering quick commerce features. This website includes real-time order tracking, fully responsive design, and a user-friendly interface for fast food orders and deliveries.",
+    tag: ["Web Development"],
     image: "/projects/proj7.png",
   },
   {
-    id: 8,
-    title: "Bally Website Research",
+    id: 10,
+    title: "Sites By Kashan – Chatbot ",
+    link:"https://sitesbykashan.netlify.app/",
+    description:
+      "A simple and efficient JavaScript chatbot embedded within a portfolio website. It assists visitors with navigation, answering common queries, and showcasing the developer’s interactive UI skills. This chatbot is used in personal Protfolio.",
+    tag: ["Chatbot"],
+    image: "/projects/chatbot3.jpg",
+  },
+  {
+    id: 7,
+    title: "Medic – Mobile App",
+    description:"A user-friendly mobile application built using Flutter and Dart, allowing users to book online doctor appointments and order medicines from the comfort of their home. Designed with convenience and accessibility in mind for a seamless healthcare experience.",
     subtitle: "AI case study",
-    tag: "Graphic Designing",
-    image: "/projects/proj8.png",
+    tag: ["Mobile App Development"],
+    image: "/projects/mobileapp1.jpg",
+  },
+  {
+    id: 8,
+    title: "Food Website – Q-Commerce",
+    link:"https://hackaton-eight-chi.vercel.app/",
+    description:
+      "A fast and dynamic quick-commerce food website. Includes both frontend and backend + Admin Dashboard with complete responsiveness and real-time order flow.",
+    subtitle: "UX case study",
+    tag: ["Web Development"],
+    image: "/projects/proj3.png",
   },
   {
     id: 9,
-    title: "Bally Website Research",
+    title: "UI Design (Figma)",
+    description:
+      "A modern and clean UI design created in Figma for a web-based foundation platform. Focused on user experience and accessibility, it showcases well-structured layouts, intuitive navigation, and a professional aesthetic ideal for development.",
     subtitle: "AI case study",
-    tag: "Mobile App development",
-    image: "/projects/proj8.png",
-  },
-  {
-    id: 10,
-    title: "Bally Website Research",
-    subtitle: "AI case study",
-    tag: "Degital Marketinh",
-    image: "/projects/proj8.png",
+    tag: ["UI Design"],
+    image: "/projects/figma1.png",
   },
   {
     id: 11,
-    title: "Bally Website Research",
+    title: "Makeup Blog",
+    link:"https://beautyblog3.vercel.app/",
+    description: "A fast, SEO-optimized blog website developed with Next.js, tailored for makeup enthusiasts. Combines clean UI design with well-crafted content to offer both aesthetic appeal and valuable beauty insights.",
     subtitle: "AI case study",
-    tag: "Contant writing",
+    tag: ["Web Development", "Content Writing"],
     image: "/projects/proj8.png",
   },
+  {
+    id: 13,
+    title: "Blog on Nextjs",
+    link:"https://nextjsblogg.vercel.app/",
+    description:"A sleek and responsive blog platform crafted with Next.js, featuring SEO-friendly architecture and optimized performance. Combines engaging, well-written content with a smooth user experience and clean, modern UI.",
+    subtitle: "AI case study",
+    tag: ["Web Development", "Content Writing"],
+    image: "/projects/proj6.png",
+  },
 ];
-
-// export default function RecentProjects() {
-//   const [activeTag, setActiveTag] = useState("All");
-
-//   const allTags = ["All", ...Array.from(new Set(projectData.map((project) => project.tag)))];
-
-//   const filteredProjects =
-//     activeTag === "All"
-//       ? projectData
-//       : projectData.filter((project) => project.tag === activeTag);
-
-//   return (
-//     <div>
-//       {/* Header Section */}
-//       <section className="relative w-full h-[80vh] flex items-center justify-center text-center text-white">
-//         <div className="absolute inset-0 z-0">
-//           <Image
-//             src="/assets/portfolio.png"
-//             alt="Portfolio Background"
-//             layout="fill"
-//             objectFit="cover"
-//             quality={100}
-//           />
-//           <div className="absolute inset-0 bg-[#008EAA] opacity-80" />
-//         </div>
-
-//         <motion.div
-//           className="relative z-10 max-w-3xl px-6"
-//           initial={{ opacity: 0, y: 50 }}
-//           animate={{ opacity: 1, y: 0 }}
-//           transition={{ duration: 0.8, ease: "easeInOut" }}
-//         >
-//           <h1 className="text-4xl md:text-5xl font-bold drop-shadow-lg">
-//             Our Portfolio
-//           </h1>
-//           <p className="mt-4 text-lg md:text-xl text-gray-200">
-//             Turning your vision into powerful digital experiences.
-//           </p>
-//           <Link href="/contact">
-//             <motion.button
-//               whileHover={{ scale: 1.1 }}
-//               whileTap={{ scale: 0.95 }}
-//               className="mt-6 px-6 py-3 bg-white text-[#008EAA] font-semibold rounded-full shadow-md hover:bg-[#f1f1f1] transition"
-//             >
-//               Let’s Collaborate
-//             </motion.button>
-//           </Link>
-//         </motion.div>
-//       </section>
-
-//       {/* Filter Buttons */}
-//       <div className="py-20 bg-white lg:px-28">
-//         <h2 className="text-black text-4xl font-bold mb-8">Recent Projects</h2>
-
-//         <div className="flex flex-wrap gap-4 mb-12">
-//           {allTags.map((tag) => (
-//             <button
-//               key={tag}
-//               onClick={() => setActiveTag(tag)}
-//               className={`px-4 py-2 rounded-full border ${
-//                 activeTag === tag
-//                   ? "bg-[#008EAA] text-white"
-//                   : "border-gray-300 text-gray-600 hover:bg-gray-100"
-//               }`}
-//             >
-//               {tag}
-//             </button>
-//           ))}
-//         </div>
-
-//         {/* Project Grid */}
-//         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-//           {filteredProjects.map((project) => (
-//             <div key={project.id} className="flex items-center gap-6">
-//               <div className="flex-1">
-//                 <p className="text-sm text-gray-400 uppercase mb-2">
-//                   {project.tag}
-//                 </p>
-//                 <h3 className="text-3xl font-bold text-gray-900 mb-4">
-//                   {project.title}
-//                 </h3>
-//                 {project.description && (
-//                   <p className="text-sm text-gray-500 mb-1">
-//                     {project.description}
-//                   </p>
-//                 )}
-//                 <div className="text-[#008eaa]">
-//                   <svg
-//                     className="w-6 h-6 rotate-45"
-//                     fill="none"
-//                     stroke="currentColor"
-//                     strokeWidth="2"
-//                     viewBox="0 0 24 24"
-//                   >
-//                     <path
-//                       strokeLinecap="round"
-//                       strokeLinejoin="round"
-//                       d="M5 12h14M12 5l7 7-7 7"
-//                     />
-//                   </svg>
-//                 </div>
-//               </div>
-
-//               <div className="flex-1 w-full h-52 overflow-hidden bg-gray-200 rounded-xl">
-//                 <img
-//                   src={project.image}
-//                   alt={`Project ${project.id}`}
-//                   className="object-cover w-full h-full"
-//                 />
-//               </div>
-//             </div>
-//           ))}
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
 
 export default function RecentProjects() {
   const [activeTag, setActiveTag] = useState("All");
 
-  const allTags = ["All", ...Array.from(new Set(projectData.map((project) => project.tag)))];
+  const allTags = [
+    "All",
+    ...Array.from(
+      new Set(
+        projectData.flatMap((project) =>
+          Array.isArray(project.tag) ? project.tag : [project.tag]
+        )
+      )
+    ),
+  ];
 
   const filteredProjects =
     activeTag === "All"
       ? projectData
-      : projectData.filter((project) => project.tag === activeTag);
+      : projectData.filter((project) =>
+          Array.isArray(project.tag)
+            ? project.tag.includes(activeTag)
+            : project.tag === activeTag
+        );
 
   return (
     <div>
-      {/* Header Section */}
       <section className="relative w-full h-[80vh] flex items-center justify-center text-center text-white">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/assets/portfolio.png"
+            src="/assets/portfolio.jpg"
             alt="Portfolio Background"
             layout="fill"
             objectFit="cover"
@@ -258,12 +183,8 @@ export default function RecentProjects() {
         </motion.div>
       </section>
 
-      {/* Filter Buttons */}
       <div className="py-16 sm:py-20 bg-white px-4 sm:px-6 lg:px-28">
-        <h2 className="text-black text-3xl sm:text-4xl font-bold mb-8">
-          Recent Projects
-        </h2>
-
+        <h2 className="text-black text-3xl sm:text-4xl font-bold mb-8">Our Top Projects</h2>
         <div className="flex flex-wrap gap-3 sm:gap-4 mb-12">
           {allTags.map((tag) => (
             <button
@@ -280,28 +201,25 @@ export default function RecentProjects() {
           ))}
         </div>
 
-        {/* Project Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-10 lg:gap-12">
           {filteredProjects.map((project) => (
             <div
               key={project.id}
-              className="flex  flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-5"
+              className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-5"
             >
               <div className="flex-1 w-full">
                 <p className="text-xs sm:text-sm text-gray-400 uppercase mb-1 sm:mb-2">
-                  {project.tag}
+                  {Array.isArray(project.tag) ? project.tag.join(", ") : project.tag}
                 </p>
                 <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-1 sm:mb-2">
                   {project.title}
                 </h3>
                 {project.description && (
-                  <p className="text-sm text-gray-500 mb-1">
-                    {project.description}
-                  </p>
+                  <p className="text-sm text-gray-500 mb-1">{project.description}</p>
                 )}
                 <div className="text-[#008eaa] mt-1 sm:mt-2">
                   <svg
-                    className="w-5 h-5 sm:w-6 sm:h-6 rotate-45"
+                    className="w-7 h-7 sm:w-7 sm:h-7 -rotate-45"
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
@@ -315,10 +233,9 @@ export default function RecentProjects() {
                   </svg>
                 </div>
               </div>
-              {/* w-full sm:flex-1 h-40 sm:h-52 overflow-hidden bg-gray-200 rounded-xl  */}
-              <div className=" w-full sm:flex-1 h-40 sm:h-52 overflow-hidden bg-gray-200 rounded-xl ">
+              <div className="w-full sm:flex-1 h-40 sm:h-52 overflow-hidden bg-gray-200 rounded-xl">
                 <img
-                  src={project.image}
+                  src={project.image || ""}
                   alt={`Project ${project.id}`}
                   className="object-cover w-full h-full"
                 />
